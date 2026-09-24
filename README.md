@@ -1,8 +1,10 @@
-# SupportFlow — CloudBox support capstone
+# SupportFlow — CloudBox Customer Support Agent
 
-A FastAPI + LangGraph support service with five specialized nodes, authenticated account isolation, Qdrant retrieval, relational persistence, a React frontend, real-graph DeepEval evaluations, and optional Langfuse export.
+**Created by Rana Refaat**
 
-**Read `START_HERE_MASRI.md` first for the Egyptian Arabic explanation.**
+SupportFlow is an end-to-end customer support application that combines a React interface, a FastAPI backend, LangGraph orchestration, Qdrant retrieval, account-scoped tools, and evaluation reports. It answers product questions with citations, guides troubleshooting, and escalates sensitive cases through structured tickets.
+
+For an Egyptian Arabic walkthrough, see [`START_HERE_MASRI.md`](START_HERE_MASRI.md).
 
 ## What SupportFlow does
 
@@ -16,7 +18,7 @@ SupportFlow brings documented answers, troubleshooting, account operations and s
 
 **Local profile:** SQLite for relational data, Qdrant local storage, lexical hash embeddings and evidence-based extractive answers. The repository also includes a Docker profile for PostgreSQL and server Qdrant, plus optional model, semantic embedding and Langfuse integrations. Configuration and validation for external services are described in `docs/VALIDATION.md` and `docs/MONITORING.md`.
 
-**Author:** Rana Refaat. Start with `QUICKSTART_WINDOWS.md` for the local demo, or `START_HERE_MASRI.md` for an Egyptian Arabic walkthrough.
+For a local walkthrough, follow [`QUICKSTART_WINDOWS.md`](QUICKSTART_WINDOWS.md).
 
 ## Demo video
 
@@ -30,7 +32,7 @@ Open the SVG directly in a browser for a full-size diagram.
 
 ## Quick start — Windows, one ZIP and no npm
 
-Open **`QUICKSTART_WINDOWS.md`** and use the four numbered `.cmd` files in the project folder. The prebuilt blue frontend, including “Built by Rana Refaat”, is already included in this archive. Python 3.12 is required. The Windows setup installs `requirements-windows.txt`, which installs the local backend without requiring a native frontend build.
+Open **`QUICKSTART_WINDOWS.md`** and use the four numbered `.cmd` files in the project folder. The production frontend build is included in the repository. Python 3.12 is required. The Windows setup installs `requirements-windows.txt`, which installs the local backend without requiring a native frontend build.
 
 The local setup generates a private `.env` with a random JWT secret, uses local Qdrant and SQLite, and does not need API keys. Run **one backend process at a time** because embedded Qdrant locks its data folder.
 
