@@ -60,8 +60,8 @@ Final structural results are 32/32. The expected answer-point strings are retain
 
 Structural contract metric: 1.0. Optional semantic metrics: faithfulness 0.90; answer relevancy, contextual precision and contextual recall 0.80. These are initial benchmarks, not empirically calibrated production thresholds. Account isolation and secret-handling tests are mandatory regardless of average scores.
 
-## Environment limitation and telemetry handling
+## Evaluation isolation and artifact hygiene
 
-An optional ONNX-based embedding experiment triggered automatic approval rejection over possible external Microsoft telemetry. The optional embedding package and ONNX runtime were removed rather than bypassing the restriction. The final evaluator uses an outbound-socket-denied subprocess, and the final run completed locally. No semantic ONNX model success is claimed. API-based semantic embedding code is supplied as an explicit credentialed option, not executed here.
+The offline evaluator runs in a subprocess with outbound Python sockets disabled, allowing structural checks against the local graph without invoking external model services. The default retriever uses local lexical hash vectors; semantic API embeddings are available as an explicit credentialed option and require separate validation.
 
 No secrets, local databases, runtime vector artifacts, provider keys, or browser session tokens are included in the deliverable. Synthetic test strings in the evaluation dataset are deliberately fictional safety probes.
