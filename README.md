@@ -18,6 +18,10 @@ SupportFlow brings documented answers, troubleshooting, account operations and s
 
 **Author:** Rana Refaat. Start with `QUICKSTART_WINDOWS.md` for the local demo, or `START_HERE_MASRI.md` for an Egyptian Arabic walkthrough.
 
+## Demo video
+
+[Watch the SupportFlow walkthrough on Google Drive](https://drive.google.com/drive/folders/1ajC0XgC80uWst_hd_JtckLmp_8fYthHm?usp=sharing)
+
 ## Architecture diagram
 
 ![SupportFlow system architecture](architecture/SUPPORTFLOW_ARCHITECTURE.svg)
