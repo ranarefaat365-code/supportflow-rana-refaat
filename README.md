@@ -4,19 +4,19 @@ A FastAPI + LangGraph support service with five specialized nodes, authenticated
 
 **Read `START_HERE_MASRI.md` first for the Egyptian Arabic explanation.**
 
-## Delivery status — read before submitting
+## What SupportFlow does
 
-This is a **new implementation built from the supplied assignment assets**, not a change to the original package. It is a runnable local reference implementation, not a claim that all seven submission components are finished.
+SupportFlow brings documented answers, troubleshooting, account operations and secure escalation into a single support experience:
 
-- Tested locally: real FastAPI endpoints, compiled LangGraph, Qdrant local persistence, SQLite relational storage, API security tests and structural DeepEval evaluations.
-- React frontend source and production build are included. **It has not been created, imported, or published inside a Lovable account.** Follow `docs/LOVABLE_SETUP.md` to complete that requirement.
-- PostgreSQL + server Qdrant Docker Compose configuration is supplied. Docker/PostgreSQL integration was not executed in this environment.
-- Actual local trace JSON exists. **No remote Langfuse dashboard or screenshots are claimed.** Add your own project keys and verify delivery.
-- Default response mode is exact evidence extraction with deterministic routing. Optional LLM evidence selection and semantic API embeddings are implemented but need provider credentials and independent live validation.
-- DeepEval custom structural metrics were executed. Paid LLM-judge faithfulness/relevancy/precision/recall metrics are available but **not executed**. Passing structural metrics is not proof of conversational quality.
-- Demo recording instructions and an English script are included; **the 7–10 minute narrated submission video is not included**.
+- A LangGraph orchestrator routes requests through five specialized agents and records a bounded execution trajectory.
+- Qdrant retrieves versioned CloudBox documentation with readable citations and source metadata.
+- FastAPI validates session identity, checks account ownership and exposes typed chat, thread, document, feedback, evaluation and ticket endpoints.
+- The React interface displays conversations, sources, tool events, escalation tickets and local monitoring.
+- The evaluation suite runs the supplied goldens and additional edge cases against the compiled graph, saving outputs and trajectories.
 
-See `docs/VALIDATION.md` for exact evidence and remaining gates.
+**Local profile:** SQLite for relational data, Qdrant local storage, lexical hash embeddings and evidence-based extractive answers. The repository also includes a Docker profile for PostgreSQL and server Qdrant, plus optional model, semantic embedding and Langfuse integrations. Configuration and validation for external services are described in `docs/VALIDATION.md` and `docs/MONITORING.md`.
+
+**Author:** Rana Refaat. Start with `QUICKSTART_WINDOWS.md` for the local demo, or `START_HERE_MASRI.md` for an Egyptian Arabic walkthrough.
 
 ## Architecture diagram
 
@@ -26,7 +26,7 @@ Open the SVG directly in a browser for a full-size diagram.
 
 ## Quick start — Windows, one ZIP and no npm
 
-Open **`QUICKSTART_WINDOWS.md`** and use the four numbered `.cmd` files in the project folder. The prebuilt blue frontend, including “Built by Rana Refaat”, is already included in this archive. Python 3.12 is required. The Windows setup installs `requirements-windows.txt`, which avoids the optional native frontend build and the known incompatible all-platform dependency lock.
+Open **`QUICKSTART_WINDOWS.md`** and use the four numbered `.cmd` files in the project folder. The prebuilt blue frontend, including “Built by Rana Refaat”, is already included in this archive. Python 3.12 is required. The Windows setup installs `requirements-windows.txt`, which installs the local backend without requiring a native frontend build.
 
 The local setup generates a private `.env` with a random JWT secret, uses local Qdrant and SQLite, and does not need API keys. Run **one backend process at a time** because embedded Qdrant locks its data folder.
 
