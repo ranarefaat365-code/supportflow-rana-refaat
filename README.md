@@ -4,8 +4,6 @@
 
 SupportFlow is an end-to-end customer support application that combines a React interface, a FastAPI backend, LangGraph orchestration, Qdrant retrieval, account-scoped tools, and evaluation reports. It answers product questions with citations, guides troubleshooting, and escalates sensitive cases through structured tickets.
 
-For an Egyptian Arabic walkthrough, see [`START_HERE_MASRI.md`](START_HERE_MASRI.md).
-
 ## What SupportFlow does
 
 SupportFlow brings documented answers, troubleshooting, account operations and secure escalation into a single support experience:
