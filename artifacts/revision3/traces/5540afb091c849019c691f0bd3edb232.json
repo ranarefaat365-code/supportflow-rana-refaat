@@ -1,0 +1,85 @@
+{
+  "trace_id": "5540afb091c849019c691f0bd3edb232",
+  "request_id": "42c7b4e7-0652-4984-9049-fd609dc26c30",
+  "user_id": "user_1",
+  "session_id": "b6a8d754-e17b-476b-ad3a-8df06691630e",
+  "spans": [
+    {
+      "id": "a480e4c1df78485f",
+      "parent_id": "5c5d54c85ce64ceb",
+      "name": "tool.get_thread_summary",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 0.901
+    },
+    {
+      "id": "5c5d54c85ce64ceb",
+      "parent_id": null,
+      "name": "agent.orchestrator",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 0.99
+    },
+    {
+      "id": "6e34e5b9af7b4410",
+      "parent_id": "63418ef17803429b",
+      "name": "embedding.local_hash",
+      "kind": "span",
+      "metadata": {
+        "embedding_model": "hash-word-bigram-4096",
+        "tokens": 0,
+        "cost_usd": 0
+      },
+      "error": false,
+      "latency_ms": 0.707
+    },
+    {
+      "id": "63418ef17803429b",
+      "parent_id": "b98a55582e2e468f",
+      "name": "retrieval.qdrant",
+      "kind": "span",
+      "metadata": {
+        "result_limit": 4
+      },
+      "error": false,
+      "latency_ms": 7.493
+    },
+    {
+      "id": "b98a55582e2e468f",
+      "parent_id": "d27bb0be95c0416f",
+      "name": "tool.search_knowledge_base",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 7.539
+    },
+    {
+      "id": "d27bb0be95c0416f",
+      "parent_id": null,
+      "name": "agent.knowledge",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 7.608
+    },
+    {
+      "id": "562b73370a69454e",
+      "parent_id": null,
+      "name": "agent.critic_response",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 0.051
+    }
+  ],
+  "exported_to_langfuse": false,
+  "summary": {
+    "route": "knowledge",
+    "model_calls": 0,
+    "tool_calls": 2,
+    "search_calls": 1,
+    "latency_ms": 11.18
+  }
+}

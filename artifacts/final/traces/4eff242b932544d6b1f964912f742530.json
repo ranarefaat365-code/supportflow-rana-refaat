@@ -1,0 +1,85 @@
+{
+  "trace_id": "4eff242b932544d6b1f964912f742530",
+  "request_id": "3a16aeeb-5b60-4868-8fe9-f70ff9fc87e8",
+  "user_id": "user_1",
+  "session_id": "2a246f39-cf10-47df-8923-0a3c905aeec8",
+  "spans": [
+    {
+      "id": "be265a4be51c4af9",
+      "parent_id": "36f877934ff24ec2",
+      "name": "tool.get_thread_summary",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 0.936
+    },
+    {
+      "id": "36f877934ff24ec2",
+      "parent_id": null,
+      "name": "agent.orchestrator",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 1.037
+    },
+    {
+      "id": "c1a35fc0e9be48e5",
+      "parent_id": "d456d1179d954d77",
+      "name": "embedding.local_hash",
+      "kind": "span",
+      "metadata": {
+        "embedding_model": "hash-word-bigram-4096",
+        "tokens": 0,
+        "cost_usd": 0
+      },
+      "error": false,
+      "latency_ms": 0.932
+    },
+    {
+      "id": "d456d1179d954d77",
+      "parent_id": "177cae08484f4b05",
+      "name": "retrieval.qdrant",
+      "kind": "span",
+      "metadata": {
+        "result_limit": 4
+      },
+      "error": false,
+      "latency_ms": 7.12
+    },
+    {
+      "id": "177cae08484f4b05",
+      "parent_id": "2429f7532f484892",
+      "name": "tool.search_knowledge_base",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 7.16
+    },
+    {
+      "id": "2429f7532f484892",
+      "parent_id": null,
+      "name": "agent.knowledge",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 7.239
+    },
+    {
+      "id": "6945927fb90c471b",
+      "parent_id": null,
+      "name": "agent.critic_response",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 0.896
+    }
+  ],
+  "export_status": "not_configured",
+  "summary": {
+    "route": "knowledge",
+    "model_calls": 0,
+    "tool_calls": 2,
+    "search_calls": 1,
+    "latency_ms": 12.02
+  }
+}

@@ -1,0 +1,9 @@
+.env
+.venv
+runtime
+artifacts
+frontend/node_modules
+frontend/dist
+__pycache__
+.git
+.deepeval

@@ -1,0 +1,85 @@
+{
+  "trace_id": "5fbb7490ccb74d55a2c19632ea1bee4a",
+  "request_id": "dea83ef5-f6a0-4587-962d-df6c69645e0a",
+  "user_id": "user_1",
+  "session_id": "8d16400b-9107-4c75-9b2f-3ad52239718b",
+  "spans": [
+    {
+      "id": "24d62aa3cbff4a8c",
+      "parent_id": "82e4ede0b8664fa8",
+      "name": "tool.get_thread_summary",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 1.354
+    },
+    {
+      "id": "82e4ede0b8664fa8",
+      "parent_id": null,
+      "name": "agent.orchestrator",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 1.512
+    },
+    {
+      "id": "3fe7bfbb4ae14d4d",
+      "parent_id": "97e4aef55d984617",
+      "name": "embedding.local_hash",
+      "kind": "span",
+      "metadata": {
+        "embedding_model": "hash-word-bigram-4096",
+        "tokens": 0,
+        "cost_usd": 0
+      },
+      "error": false,
+      "latency_ms": 1.058
+    },
+    {
+      "id": "97e4aef55d984617",
+      "parent_id": "ffdb7775e2f74602",
+      "name": "retrieval.qdrant",
+      "kind": "span",
+      "metadata": {
+        "result_limit": 4
+      },
+      "error": false,
+      "latency_ms": 20.013
+    },
+    {
+      "id": "ffdb7775e2f74602",
+      "parent_id": "063a45b9c5ba4d2c",
+      "name": "tool.search_knowledge_base",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 20.073
+    },
+    {
+      "id": "063a45b9c5ba4d2c",
+      "parent_id": null,
+      "name": "agent.knowledge",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 20.2
+    },
+    {
+      "id": "61de97b774d34c94",
+      "parent_id": null,
+      "name": "agent.critic_response",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 2.217
+    }
+  ],
+  "exported_to_langfuse": false,
+  "summary": {
+    "route": "knowledge",
+    "model_calls": 0,
+    "tool_calls": 2,
+    "search_calls": 1,
+    "latency_ms": 28.98
+  }
+}

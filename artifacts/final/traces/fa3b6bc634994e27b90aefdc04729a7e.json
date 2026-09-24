@@ -1,0 +1,85 @@
+{
+  "trace_id": "fa3b6bc634994e27b90aefdc04729a7e",
+  "request_id": "ecd61a18-7e81-4497-a940-6111c32c927c",
+  "user_id": "user_1",
+  "session_id": "1d6a1dfe-d1db-4823-9d75-71ecdd7172d6",
+  "spans": [
+    {
+      "id": "9342c08fd02045c0",
+      "parent_id": "ed27911699404e2e",
+      "name": "tool.get_thread_summary",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 1.363
+    },
+    {
+      "id": "ed27911699404e2e",
+      "parent_id": null,
+      "name": "agent.orchestrator",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 1.488
+    },
+    {
+      "id": "07c291a3e5d14667",
+      "parent_id": "56fe2209617f4aa7",
+      "name": "embedding.local_hash",
+      "kind": "span",
+      "metadata": {
+        "embedding_model": "hash-word-bigram-4096",
+        "tokens": 0,
+        "cost_usd": 0
+      },
+      "error": false,
+      "latency_ms": 1.048
+    },
+    {
+      "id": "56fe2209617f4aa7",
+      "parent_id": "d431323576584536",
+      "name": "retrieval.qdrant",
+      "kind": "span",
+      "metadata": {
+        "result_limit": 4
+      },
+      "error": false,
+      "latency_ms": 10.842
+    },
+    {
+      "id": "d431323576584536",
+      "parent_id": "5a2c3623d5174dce",
+      "name": "tool.search_knowledge_base",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 10.887
+    },
+    {
+      "id": "5a2c3623d5174dce",
+      "parent_id": null,
+      "name": "agent.knowledge",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 10.993
+    },
+    {
+      "id": "3c9db539c1f0452c",
+      "parent_id": null,
+      "name": "agent.critic_response",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 0.701
+    }
+  ],
+  "exported_to_langfuse": false,
+  "summary": {
+    "route": "knowledge",
+    "model_calls": 0,
+    "tool_calls": 2,
+    "search_calls": 1,
+    "latency_ms": 16.57
+  }
+}

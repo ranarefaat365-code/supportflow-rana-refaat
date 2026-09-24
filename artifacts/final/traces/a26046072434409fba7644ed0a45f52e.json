@@ -1,0 +1,85 @@
+{
+  "trace_id": "a26046072434409fba7644ed0a45f52e",
+  "request_id": "b1a270c9-0eed-43e3-9c5b-e8a9d84eadd2",
+  "user_id": "user_1",
+  "session_id": "ab01597d-ebff-4f5f-be09-f836b560e294",
+  "spans": [
+    {
+      "id": "9b7a658792f446b6",
+      "parent_id": "31501e6b1ca44d56",
+      "name": "tool.get_thread_summary",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 0.915
+    },
+    {
+      "id": "31501e6b1ca44d56",
+      "parent_id": null,
+      "name": "agent.orchestrator",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 1.082
+    },
+    {
+      "id": "1a34e585157b4fe3",
+      "parent_id": "9a71b350758c4c1a",
+      "name": "embedding.local_hash",
+      "kind": "span",
+      "metadata": {
+        "embedding_model": "hash-word-bigram-4096",
+        "tokens": 0,
+        "cost_usd": 0
+      },
+      "error": false,
+      "latency_ms": 1.279
+    },
+    {
+      "id": "9a71b350758c4c1a",
+      "parent_id": "298fe979cd924c85",
+      "name": "retrieval.qdrant",
+      "kind": "span",
+      "metadata": {
+        "result_limit": 4
+      },
+      "error": false,
+      "latency_ms": 7.211
+    },
+    {
+      "id": "298fe979cd924c85",
+      "parent_id": "af54a992cd6e4dd6",
+      "name": "tool.search_knowledge_base",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 7.258
+    },
+    {
+      "id": "af54a992cd6e4dd6",
+      "parent_id": null,
+      "name": "agent.knowledge",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 7.366
+    },
+    {
+      "id": "bdd04ce476ba42c0",
+      "parent_id": null,
+      "name": "agent.critic_response",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 0.939
+    }
+  ],
+  "export_status": "not_configured",
+  "summary": {
+    "route": "knowledge",
+    "model_calls": 0,
+    "tool_calls": 2,
+    "search_calls": 1,
+    "latency_ms": 12.04
+  }
+}

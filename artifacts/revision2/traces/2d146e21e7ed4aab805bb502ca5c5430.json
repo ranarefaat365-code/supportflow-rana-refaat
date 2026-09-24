@@ -1,0 +1,85 @@
+{
+  "trace_id": "2d146e21e7ed4aab805bb502ca5c5430",
+  "request_id": "612198eb-ef0b-41d9-ba46-55ea2725349e",
+  "user_id": "user_1",
+  "session_id": "4bcfd34e-3025-4749-81d7-30d9909a50b3",
+  "spans": [
+    {
+      "id": "a01ac4c5186a4114",
+      "parent_id": "06a55b03389b4052",
+      "name": "tool.get_thread_summary",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 0.886
+    },
+    {
+      "id": "06a55b03389b4052",
+      "parent_id": null,
+      "name": "agent.orchestrator",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 0.981
+    },
+    {
+      "id": "07cb8f9b14b64fe8",
+      "parent_id": "019c69916d8844eb",
+      "name": "embedding.local_hash",
+      "kind": "span",
+      "metadata": {
+        "embedding_model": "hash-word-bigram-4096",
+        "tokens": 0,
+        "cost_usd": 0
+      },
+      "error": false,
+      "latency_ms": 0.727
+    },
+    {
+      "id": "019c69916d8844eb",
+      "parent_id": "65fb2b126b8745e8",
+      "name": "retrieval.qdrant",
+      "kind": "span",
+      "metadata": {
+        "result_limit": 4
+      },
+      "error": false,
+      "latency_ms": 9.374
+    },
+    {
+      "id": "65fb2b126b8745e8",
+      "parent_id": "cacf24919fa447f2",
+      "name": "tool.search_knowledge_base",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 9.42
+    },
+    {
+      "id": "cacf24919fa447f2",
+      "parent_id": null,
+      "name": "agent.knowledge",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 9.5
+    },
+    {
+      "id": "b1c9242449934f35",
+      "parent_id": null,
+      "name": "agent.critic_response",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 0.977
+    }
+  ],
+  "exported_to_langfuse": false,
+  "summary": {
+    "route": "knowledge",
+    "model_calls": 0,
+    "tool_calls": 2,
+    "search_calls": 1,
+    "latency_ms": 14.89
+  }
+}

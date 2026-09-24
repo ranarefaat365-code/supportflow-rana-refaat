@@ -1,0 +1,103 @@
+{
+  "trace_id": "c15a1d40844a4b2da3b5b89f73f855d9",
+  "request_id": "7e6ecfa5-cb53-4fca-b715-f46bbef3d1b2",
+  "user_id": "user_1",
+  "session_id": "2e4fe40c-b0ea-47c7-b813-b90235d74ff4",
+  "spans": [
+    {
+      "id": "f8a614d55ae1440f",
+      "parent_id": "38048fcf66ea4b86",
+      "name": "tool.get_thread_summary",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 0.92
+    },
+    {
+      "id": "38048fcf66ea4b86",
+      "parent_id": null,
+      "name": "agent.orchestrator",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 1.131
+    },
+    {
+      "id": "8925eeadbacb4c5c",
+      "parent_id": "b45589c1631846d7",
+      "name": "embedding.local_hash",
+      "kind": "span",
+      "metadata": {
+        "embedding_model": "hash-word-bigram-4096",
+        "tokens": 0,
+        "cost_usd": 0
+      },
+      "error": false,
+      "latency_ms": 0.753
+    },
+    {
+      "id": "b45589c1631846d7",
+      "parent_id": "d6c3dc521739404b",
+      "name": "retrieval.qdrant",
+      "kind": "span",
+      "metadata": {
+        "result_limit": 4
+      },
+      "error": false,
+      "latency_ms": 7.946
+    },
+    {
+      "id": "d6c3dc521739404b",
+      "parent_id": "7578b020bc944b69",
+      "name": "tool.search_knowledge_base",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 7.991
+    },
+    {
+      "id": "7578b020bc944b69",
+      "parent_id": null,
+      "name": "agent.knowledge",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 8.088
+    },
+    {
+      "id": "76a77196fd5b4705",
+      "parent_id": "5d7aa4456d8e4f42",
+      "name": "tool.create_ticket",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 2.973
+    },
+    {
+      "id": "5d7aa4456d8e4f42",
+      "parent_id": null,
+      "name": "agent.escalation",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 3.074
+    },
+    {
+      "id": "458ecf1cac474818",
+      "parent_id": null,
+      "name": "agent.critic_response",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 1.165
+    }
+  ],
+  "exported_to_langfuse": false,
+  "summary": {
+    "route": "escalation",
+    "model_calls": 0,
+    "tool_calls": 3,
+    "search_calls": 1,
+    "latency_ms": 16.88
+  }
+}

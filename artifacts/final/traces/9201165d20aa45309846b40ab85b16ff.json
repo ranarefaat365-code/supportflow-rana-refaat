@@ -1,0 +1,85 @@
+{
+  "trace_id": "9201165d20aa45309846b40ab85b16ff",
+  "request_id": "087ee55e-3a51-40fa-b731-04107fbfe177",
+  "user_id": "user_1",
+  "session_id": "c44cdad8-8d17-4d23-9e71-133898824b35",
+  "spans": [
+    {
+      "id": "13bd7fbf1bd04ff3",
+      "parent_id": "150b4869f77c4c43",
+      "name": "tool.get_thread_summary",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 1.285
+    },
+    {
+      "id": "150b4869f77c4c43",
+      "parent_id": null,
+      "name": "agent.orchestrator",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 2.966
+    },
+    {
+      "id": "d65bb1bd1fd84c24",
+      "parent_id": "c00348ea57db429b",
+      "name": "embedding.local_hash",
+      "kind": "span",
+      "metadata": {
+        "embedding_model": "hash-word-bigram-4096",
+        "tokens": 0,
+        "cost_usd": 0
+      },
+      "error": false,
+      "latency_ms": 1.213
+    },
+    {
+      "id": "c00348ea57db429b",
+      "parent_id": "d7c72e7bab234c57",
+      "name": "retrieval.qdrant",
+      "kind": "span",
+      "metadata": {
+        "result_limit": 4
+      },
+      "error": false,
+      "latency_ms": 11.144
+    },
+    {
+      "id": "d7c72e7bab234c57",
+      "parent_id": "cdef8e0dd7374226",
+      "name": "tool.search_knowledge_base",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 11.194
+    },
+    {
+      "id": "cdef8e0dd7374226",
+      "parent_id": null,
+      "name": "agent.knowledge",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 11.283
+    },
+    {
+      "id": "0efdf052e2eb423c",
+      "parent_id": null,
+      "name": "agent.critic_response",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 1.127
+    }
+  ],
+  "export_status": "not_configured",
+  "summary": {
+    "route": "knowledge",
+    "model_calls": 0,
+    "tool_calls": 2,
+    "search_calls": 1,
+    "latency_ms": 21.55
+  }
+}

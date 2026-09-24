@@ -1,0 +1,85 @@
+{
+  "trace_id": "946e9386fabc4ba48f4361e2b0ecfe02",
+  "request_id": "55a3d69b-5c74-46c1-87d5-86028e232999",
+  "user_id": "user_1",
+  "session_id": "75a2f5c6-5ca6-4e38-979f-7da1b7e620d2",
+  "spans": [
+    {
+      "id": "fa65aaa95e1f4d69",
+      "parent_id": "d64a07d84dfa465a",
+      "name": "tool.get_thread_summary",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 1.237
+    },
+    {
+      "id": "d64a07d84dfa465a",
+      "parent_id": null,
+      "name": "agent.orchestrator",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 1.342
+    },
+    {
+      "id": "7c1f86ce6c1a4737",
+      "parent_id": "9a4bb8938c5a46b5",
+      "name": "embedding.local_hash",
+      "kind": "span",
+      "metadata": {
+        "embedding_model": "hash-word-bigram-4096",
+        "tokens": 0,
+        "cost_usd": 0
+      },
+      "error": false,
+      "latency_ms": 0.639
+    },
+    {
+      "id": "9a4bb8938c5a46b5",
+      "parent_id": "a9227d1932e142f9",
+      "name": "retrieval.qdrant",
+      "kind": "span",
+      "metadata": {
+        "result_limit": 4
+      },
+      "error": false,
+      "latency_ms": 7.344
+    },
+    {
+      "id": "a9227d1932e142f9",
+      "parent_id": "0547419f1c2b44b4",
+      "name": "tool.search_knowledge_base",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 7.411
+    },
+    {
+      "id": "0547419f1c2b44b4",
+      "parent_id": null,
+      "name": "agent.knowledge",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 7.534
+    },
+    {
+      "id": "d90c5580aabf4f63",
+      "parent_id": null,
+      "name": "agent.critic_response",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 0.312
+    }
+  ],
+  "exported_to_langfuse": false,
+  "summary": {
+    "route": "knowledge",
+    "model_calls": 0,
+    "tool_calls": 2,
+    "search_calls": 1,
+    "latency_ms": 12.05
+  }
+}

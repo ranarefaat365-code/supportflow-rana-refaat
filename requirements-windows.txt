@@ -1,0 +1,11 @@
+# Windows local demo runtime; no Rollup, DeepEval, or native frontend build required.
+fastapi==0.141.1
+uvicorn==0.53.0
+pydantic-settings==2.15.0
+langgraph==1.2.12
+qdrant-client==1.19.1
+sqlalchemy==2.0.54
+scikit-learn==1.9.1
+PyJWT==2.15.0
+PyYAML==6.0.3
+httpx==0.28.1

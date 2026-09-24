@@ -1,0 +1,85 @@
+{
+  "trace_id": "fa59093803bd4cbd8ff22f0eda3183b5",
+  "request_id": "aedc47c1-2939-44f6-b796-607dbeddbf75",
+  "user_id": "user_1",
+  "session_id": "221f82b5-0406-4f04-bd69-caf975a95357",
+  "spans": [
+    {
+      "id": "29293a888a9640b4",
+      "parent_id": "e4aa71bffd5d481e",
+      "name": "tool.get_thread_summary",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 1.006
+    },
+    {
+      "id": "e4aa71bffd5d481e",
+      "parent_id": null,
+      "name": "agent.orchestrator",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 1.106
+    },
+    {
+      "id": "7b403da116fe44f0",
+      "parent_id": "b0a98bca5fab4a6e",
+      "name": "embedding.local_hash",
+      "kind": "span",
+      "metadata": {
+        "embedding_model": "hash-word-bigram-4096",
+        "tokens": 0,
+        "cost_usd": 0
+      },
+      "error": false,
+      "latency_ms": 0.831
+    },
+    {
+      "id": "b0a98bca5fab4a6e",
+      "parent_id": "eb91864d934b4913",
+      "name": "retrieval.qdrant",
+      "kind": "span",
+      "metadata": {
+        "result_limit": 4
+      },
+      "error": false,
+      "latency_ms": 8.609
+    },
+    {
+      "id": "eb91864d934b4913",
+      "parent_id": "cc0fb58e32d84188",
+      "name": "tool.search_knowledge_base",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 8.662
+    },
+    {
+      "id": "cc0fb58e32d84188",
+      "parent_id": null,
+      "name": "agent.knowledge",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 8.891
+    },
+    {
+      "id": "69e326442aac466c",
+      "parent_id": null,
+      "name": "agent.critic_response",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 0.069
+    }
+  ],
+  "exported_to_langfuse": false,
+  "summary": {
+    "route": "knowledge",
+    "model_calls": 0,
+    "tool_calls": 2,
+    "search_calls": 1,
+    "latency_ms": 12.95
+  }
+}

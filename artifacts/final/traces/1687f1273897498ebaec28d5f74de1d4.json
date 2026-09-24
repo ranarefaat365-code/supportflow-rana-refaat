@@ -1,0 +1,85 @@
+{
+  "trace_id": "1687f1273897498ebaec28d5f74de1d4",
+  "request_id": "1e98a56e-7a2b-4db6-a055-2d8d690d017f",
+  "user_id": "user_1",
+  "session_id": "c065c09f-ecf0-48d5-8c07-fe91275cd3f0",
+  "spans": [
+    {
+      "id": "b80af1a3bea449d2",
+      "parent_id": "e9a8674ad43346d0",
+      "name": "tool.get_thread_summary",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 1.005
+    },
+    {
+      "id": "e9a8674ad43346d0",
+      "parent_id": null,
+      "name": "agent.orchestrator",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 1.108
+    },
+    {
+      "id": "bce1525eec164d55",
+      "parent_id": "6ccf0b7084a145ff",
+      "name": "embedding.local_hash",
+      "kind": "span",
+      "metadata": {
+        "embedding_model": "hash-word-bigram-4096",
+        "tokens": 0,
+        "cost_usd": 0
+      },
+      "error": false,
+      "latency_ms": 0.843
+    },
+    {
+      "id": "6ccf0b7084a145ff",
+      "parent_id": "83246365b8654179",
+      "name": "retrieval.qdrant",
+      "kind": "span",
+      "metadata": {
+        "result_limit": 4
+      },
+      "error": false,
+      "latency_ms": 8.121
+    },
+    {
+      "id": "83246365b8654179",
+      "parent_id": "9b6da548ae23444a",
+      "name": "tool.search_knowledge_base",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 8.157
+    },
+    {
+      "id": "9b6da548ae23444a",
+      "parent_id": null,
+      "name": "agent.knowledge",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 8.233
+    },
+    {
+      "id": "fd90bf18fc53459d",
+      "parent_id": null,
+      "name": "agent.critic_response",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 1.063
+    }
+  ],
+  "exported_to_langfuse": false,
+  "summary": {
+    "route": "knowledge",
+    "model_calls": 0,
+    "tool_calls": 2,
+    "search_calls": 1,
+    "latency_ms": 13.23
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "trace_id": "c3a19584b48f42b6bb51ba396d8127ef",
+  "request_id": "4145edcf-5742-4dab-90d3-86e78cc289f3",
+  "user_id": "user_1",
+  "session_id": "f72f4752-4d87-4f89-8e30-874e844454e3",
+  "spans": [
+    {
+      "id": "eb7295c1f9274a7a",
+      "parent_id": "e96a1ebeabf144cd",
+      "name": "tool.get_thread_summary",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 1.18
+    },
+    {
+      "id": "e96a1ebeabf144cd",
+      "parent_id": null,
+      "name": "agent.orchestrator",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 1.271
+    },
+    {
+      "id": "37b36020c9f342e5",
+      "parent_id": "e852ebea1cdc4c69",
+      "name": "embedding.local_hash",
+      "kind": "span",
+      "metadata": {
+        "embedding_model": "hash-word-bigram-4096",
+        "tokens": 0,
+        "cost_usd": 0
+      },
+      "error": false,
+      "latency_ms": 0.871
+    },
+    {
+      "id": "e852ebea1cdc4c69",
+      "parent_id": "313158644f534ff0",
+      "name": "retrieval.qdrant",
+      "kind": "span",
+      "metadata": {
+        "result_limit": 4
+      },
+      "error": false,
+      "latency_ms": 7.673
+    },
+    {
+      "id": "313158644f534ff0",
+      "parent_id": "4162b0d38eca4727",
+      "name": "tool.search_knowledge_base",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 7.715
+    },
+    {
+      "id": "4162b0d38eca4727",
+      "parent_id": null,
+      "name": "agent.knowledge",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 7.895
+    },
+    {
+      "id": "9fe2ad1af0b3439d",
+      "parent_id": null,
+      "name": "agent.critic_response",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 0.554
+    }
+  ],
+  "exported_to_langfuse": false,
+  "summary": {
+    "route": "knowledge",
+    "model_calls": 0,
+    "tool_calls": 2,
+    "search_calls": 1,
+    "latency_ms": 12.32
+  }
+}

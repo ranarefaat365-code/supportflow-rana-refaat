@@ -1,0 +1,85 @@
+{
+  "trace_id": "644f512f676c411da2d6ced1b14e55a5",
+  "request_id": "30f79473-16f2-440e-9c8f-bd4ef11ddb9d",
+  "user_id": "user_1",
+  "session_id": "8b8f7deb-9e7f-49b6-98cf-719157df0873",
+  "spans": [
+    {
+      "id": "b1d03c0cebff4b7a",
+      "parent_id": "9eeaf373f3b14e97",
+      "name": "tool.get_thread_summary",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 1.18
+    },
+    {
+      "id": "9eeaf373f3b14e97",
+      "parent_id": null,
+      "name": "agent.orchestrator",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 1.302
+    },
+    {
+      "id": "441d776add86443e",
+      "parent_id": "f67b6034fed9436e",
+      "name": "embedding.local_hash",
+      "kind": "span",
+      "metadata": {
+        "embedding_model": "hash-word-bigram-4096",
+        "tokens": 0,
+        "cost_usd": 0
+      },
+      "error": false,
+      "latency_ms": 0.905
+    },
+    {
+      "id": "f67b6034fed9436e",
+      "parent_id": "1434aca0a2814ceb",
+      "name": "retrieval.qdrant",
+      "kind": "span",
+      "metadata": {
+        "result_limit": 4
+      },
+      "error": false,
+      "latency_ms": 11.161
+    },
+    {
+      "id": "1434aca0a2814ceb",
+      "parent_id": "fb08d28e5be545ba",
+      "name": "tool.search_knowledge_base",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 11.245
+    },
+    {
+      "id": "fb08d28e5be545ba",
+      "parent_id": null,
+      "name": "agent.knowledge",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 11.419
+    },
+    {
+      "id": "3fa9fdefbf544189",
+      "parent_id": null,
+      "name": "agent.critic_response",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 0.112
+    }
+  ],
+  "exported_to_langfuse": false,
+  "summary": {
+    "route": "knowledge",
+    "model_calls": 0,
+    "tool_calls": 2,
+    "search_calls": 1,
+    "latency_ms": 17.2
+  }
+}

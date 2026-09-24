@@ -1,0 +1,39 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: supportflow
+      POSTGRES_DB: supportflow
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Run setup_local first}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: [CMD-SHELL, "pg_isready -U supportflow -d supportflow"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+  qdrant:
+    image: qdrant/qdrant:v1.17.0
+    volumes:
+      - qdrant_data:/qdrant/storage
+  backend:
+    build: .
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql+psycopg://supportflow:${POSTGRES_PASSWORD}@postgres:5432/supportflow
+      QDRANT_URL: http://qdrant:6333
+      QDRANT_PATH: /app/runtime/qdrant
+    ports: ["127.0.0.1:8000:8000"]
+    volumes: ["backend_runtime:/app/runtime"]
+    depends_on:
+      postgres: {condition: service_healthy}
+      qdrant: {condition: service_started}
+    restart: on-failure:3
+  frontend:
+    build: ./frontend
+    ports: ["127.0.0.1:5173:80"]
+    depends_on: [backend]
+volumes:
+  postgres_data:
+  qdrant_data:
+  backend_runtime:

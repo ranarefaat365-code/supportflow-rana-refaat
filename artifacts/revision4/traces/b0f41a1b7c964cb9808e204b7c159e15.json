@@ -1,0 +1,136 @@
+{
+  "trace_id": "b0f41a1b7c964cb9808e204b7c159e15",
+  "request_id": "4bbf7893-e9fa-4b2d-bdb6-1ef1965ae185",
+  "user_id": "user_1",
+  "session_id": "80723da4-0fc7-4c70-b97e-584863fea992",
+  "spans": [
+    {
+      "id": "a024b27f62da4597",
+      "parent_id": "66f8b8e9f8b7492e",
+      "name": "tool.get_thread_summary",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 0.954
+    },
+    {
+      "id": "66f8b8e9f8b7492e",
+      "parent_id": null,
+      "name": "agent.orchestrator",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 1.05
+    },
+    {
+      "id": "7cb6e0eef0014b79",
+      "parent_id": "98c7f301256c49ff",
+      "name": "embedding.local_hash",
+      "kind": "span",
+      "metadata": {
+        "embedding_model": "hash-word-bigram-4096",
+        "tokens": 0,
+        "cost_usd": 0
+      },
+      "error": false,
+      "latency_ms": 0.765
+    },
+    {
+      "id": "98c7f301256c49ff",
+      "parent_id": "7bb9f5ae821b4767",
+      "name": "retrieval.qdrant",
+      "kind": "span",
+      "metadata": {
+        "result_limit": 4
+      },
+      "error": false,
+      "latency_ms": 9.217
+    },
+    {
+      "id": "7bb9f5ae821b4767",
+      "parent_id": "e9701961e0db401a",
+      "name": "tool.search_knowledge_base",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 9.257
+    },
+    {
+      "id": "4c5ecdf55b59453b",
+      "parent_id": "6d4ac14d401e48fd",
+      "name": "embedding.local_hash",
+      "kind": "span",
+      "metadata": {
+        "embedding_model": "hash-word-bigram-4096",
+        "tokens": 0,
+        "cost_usd": 0
+      },
+      "error": false,
+      "latency_ms": 0.665
+    },
+    {
+      "id": "6d4ac14d401e48fd",
+      "parent_id": "e659cb218ee746ea",
+      "name": "retrieval.qdrant",
+      "kind": "span",
+      "metadata": {
+        "result_limit": 1
+      },
+      "error": false,
+      "latency_ms": 13.213
+    },
+    {
+      "id": "e659cb218ee746ea",
+      "parent_id": "e9701961e0db401a",
+      "name": "tool.search_knowledge_base",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 13.265
+    },
+    {
+      "id": "e9701961e0db401a",
+      "parent_id": null,
+      "name": "agent.knowledge",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 22.644
+    },
+    {
+      "id": "20c24a74906b4605",
+      "parent_id": "c82b3a505ca74df8",
+      "name": "tool.get_order",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 0.03
+    },
+    {
+      "id": "c82b3a505ca74df8",
+      "parent_id": null,
+      "name": "agent.account_tools",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 0.183
+    },
+    {
+      "id": "67f16d0992594e95",
+      "parent_id": null,
+      "name": "agent.critic_response",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 0.631
+    }
+  ],
+  "exported_to_langfuse": false,
+  "summary": {
+    "route": "account_tool",
+    "model_calls": 0,
+    "tool_calls": 4,
+    "search_calls": 2,
+    "latency_ms": 27.88
+  }
+}

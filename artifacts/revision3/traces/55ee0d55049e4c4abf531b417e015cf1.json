@@ -1,0 +1,85 @@
+{
+  "trace_id": "55ee0d55049e4c4abf531b417e015cf1",
+  "request_id": "44016bc2-ad34-4fc8-82c9-9078b55730f4",
+  "user_id": "user_1",
+  "session_id": "52172055-33ba-40fe-a48e-4e1ae07825ca",
+  "spans": [
+    {
+      "id": "605e89ad723744af",
+      "parent_id": "2e822a4446bf4119",
+      "name": "tool.get_thread_summary",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 1.071
+    },
+    {
+      "id": "2e822a4446bf4119",
+      "parent_id": null,
+      "name": "agent.orchestrator",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 1.164
+    },
+    {
+      "id": "632d9ff769984fa2",
+      "parent_id": "98bdc056c33841b1",
+      "name": "embedding.local_hash",
+      "kind": "span",
+      "metadata": {
+        "embedding_model": "hash-word-bigram-4096",
+        "tokens": 0,
+        "cost_usd": 0
+      },
+      "error": false,
+      "latency_ms": 0.76
+    },
+    {
+      "id": "98bdc056c33841b1",
+      "parent_id": "ff13d3e9c1e242d2",
+      "name": "retrieval.qdrant",
+      "kind": "span",
+      "metadata": {
+        "result_limit": 4
+      },
+      "error": false,
+      "latency_ms": 10.945
+    },
+    {
+      "id": "ff13d3e9c1e242d2",
+      "parent_id": "97e24c4573b6450f",
+      "name": "tool.search_knowledge_base",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 10.985
+    },
+    {
+      "id": "97e24c4573b6450f",
+      "parent_id": null,
+      "name": "agent.knowledge",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 11.056
+    },
+    {
+      "id": "9b9503c550884897",
+      "parent_id": null,
+      "name": "agent.critic_response",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 0.63
+    }
+  ],
+  "exported_to_langfuse": false,
+  "summary": {
+    "route": "knowledge",
+    "model_calls": 0,
+    "tool_calls": 2,
+    "search_calls": 1,
+    "latency_ms": 16.06
+  }
+}

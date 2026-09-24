@@ -1,0 +1,85 @@
+{
+  "trace_id": "51c4188ec5d147b190d3a9c089e2ab8f",
+  "request_id": "7edb74d9-a92b-41aa-b54a-06b3bbf828cf",
+  "user_id": "user_1",
+  "session_id": "7da5842b-9658-4740-9b68-b8ac12fdb5f6",
+  "spans": [
+    {
+      "id": "d4cf748181ec4047",
+      "parent_id": "f4c208e70c8243af",
+      "name": "tool.get_thread_summary",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 1.407
+    },
+    {
+      "id": "f4c208e70c8243af",
+      "parent_id": null,
+      "name": "agent.orchestrator",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 2.6
+    },
+    {
+      "id": "0a5657ddc1cf4a06",
+      "parent_id": "c916c842abb34c4c",
+      "name": "embedding.local_hash",
+      "kind": "span",
+      "metadata": {
+        "embedding_model": "hash-word-bigram-4096",
+        "tokens": 0,
+        "cost_usd": 0
+      },
+      "error": false,
+      "latency_ms": 0.8
+    },
+    {
+      "id": "c916c842abb34c4c",
+      "parent_id": "a654650a0b414e30",
+      "name": "retrieval.qdrant",
+      "kind": "span",
+      "metadata": {
+        "result_limit": 4
+      },
+      "error": false,
+      "latency_ms": 11.291
+    },
+    {
+      "id": "a654650a0b414e30",
+      "parent_id": "f11fce14a6594ee0",
+      "name": "tool.search_knowledge_base",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 11.342
+    },
+    {
+      "id": "f11fce14a6594ee0",
+      "parent_id": null,
+      "name": "agent.knowledge",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 11.533
+    },
+    {
+      "id": "68a04e676bec45d6",
+      "parent_id": null,
+      "name": "agent.critic_response",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 0.644
+    }
+  ],
+  "exported_to_langfuse": false,
+  "summary": {
+    "route": "knowledge",
+    "model_calls": 0,
+    "tool_calls": 2,
+    "search_calls": 1,
+    "latency_ms": 21.23
+  }
+}

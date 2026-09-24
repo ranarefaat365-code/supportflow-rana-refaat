@@ -1,0 +1,85 @@
+{
+  "trace_id": "1b53f87686594ee2803a42595d0d1970",
+  "request_id": "96689469-d8ee-4fb2-9dbb-4af312cb638d",
+  "user_id": "user_1",
+  "session_id": "bcfc817a-13de-41b3-bde9-187f97566316",
+  "spans": [
+    {
+      "id": "041b042027ca482c",
+      "parent_id": "71547e00ce9a4c38",
+      "name": "tool.get_thread_summary",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 1.346
+    },
+    {
+      "id": "71547e00ce9a4c38",
+      "parent_id": null,
+      "name": "agent.orchestrator",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 1.452
+    },
+    {
+      "id": "76d458cfecfc4bb0",
+      "parent_id": "27fad09ba9fd4421",
+      "name": "embedding.local_hash",
+      "kind": "span",
+      "metadata": {
+        "embedding_model": "hash-word-bigram-4096",
+        "tokens": 0,
+        "cost_usd": 0
+      },
+      "error": false,
+      "latency_ms": 0.731
+    },
+    {
+      "id": "27fad09ba9fd4421",
+      "parent_id": "279f1aa810ca4d1a",
+      "name": "retrieval.qdrant",
+      "kind": "span",
+      "metadata": {
+        "result_limit": 4
+      },
+      "error": false,
+      "latency_ms": 7.158
+    },
+    {
+      "id": "279f1aa810ca4d1a",
+      "parent_id": "0784fd7a8c524162",
+      "name": "tool.search_knowledge_base",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 7.201
+    },
+    {
+      "id": "0784fd7a8c524162",
+      "parent_id": null,
+      "name": "agent.knowledge",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 7.281
+    },
+    {
+      "id": "f52590b7c32b4b73",
+      "parent_id": null,
+      "name": "agent.critic_response",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 0.562
+    }
+  ],
+  "export_status": "not_configured",
+  "summary": {
+    "route": "knowledge",
+    "model_calls": 0,
+    "tool_calls": 2,
+    "search_calls": 1,
+    "latency_ms": 12.22
+  }
+}

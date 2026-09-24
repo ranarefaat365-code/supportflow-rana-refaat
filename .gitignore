@@ -1,0 +1,13 @@
+.env
+.env.*
+!.env.example
+runtime/
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.deepeval/
+*.db
+*.sqlite*
+*.pyc
+node_modules/

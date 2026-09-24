@@ -1,0 +1,85 @@
+{
+  "trace_id": "1b0644082bb14794ae44639da2161ba3",
+  "request_id": "43ae9071-bf5b-4548-829b-bada23a42a83",
+  "user_id": "user_1",
+  "session_id": "837f3191-4fa2-41e3-a964-f1dee6d10b96",
+  "spans": [
+    {
+      "id": "345fee350250401a",
+      "parent_id": "96d73b901c0b4fd1",
+      "name": "tool.get_thread_summary",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 2.186
+    },
+    {
+      "id": "96d73b901c0b4fd1",
+      "parent_id": null,
+      "name": "agent.orchestrator",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 2.305
+    },
+    {
+      "id": "6df46a6d2bc84481",
+      "parent_id": "f3fd98daeca347e4",
+      "name": "embedding.local_hash",
+      "kind": "span",
+      "metadata": {
+        "embedding_model": "hash-word-bigram-4096",
+        "tokens": 0,
+        "cost_usd": 0
+      },
+      "error": false,
+      "latency_ms": 0.925
+    },
+    {
+      "id": "f3fd98daeca347e4",
+      "parent_id": "66936f27130c4629",
+      "name": "retrieval.qdrant",
+      "kind": "span",
+      "metadata": {
+        "result_limit": 4
+      },
+      "error": false,
+      "latency_ms": 9.347
+    },
+    {
+      "id": "66936f27130c4629",
+      "parent_id": "74870afab63c4f20",
+      "name": "tool.search_knowledge_base",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 9.401
+    },
+    {
+      "id": "74870afab63c4f20",
+      "parent_id": null,
+      "name": "agent.knowledge",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 9.568
+    },
+    {
+      "id": "ff9cce845d464b48",
+      "parent_id": null,
+      "name": "agent.critic_response",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 0.288
+    }
+  ],
+  "exported_to_langfuse": false,
+  "summary": {
+    "route": "knowledge",
+    "model_calls": 0,
+    "tool_calls": 2,
+    "search_calls": 1,
+    "latency_ms": 15.69
+  }
+}

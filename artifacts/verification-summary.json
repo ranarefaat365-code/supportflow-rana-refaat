@@ -1,0 +1,14 @@
+{
+  "api_security_tests": {"passed": 24, "failed": 0, "evidence": "pytest-results.xml"},
+  "deepeval_structural": {"passed": 32, "failed": 0, "evidence": "eval_results.json"},
+  "semantic_llm_judge": "not_run",
+  "remote_semantic_embeddings": "not_run",
+  "langfuse_remote_delivery": "not_verified",
+  "lovable_deployment": "not_created",
+  "postgres_docker_deployment": "not_run",
+  "browser_smoke": "passed: login, real API chat, citations, document list, monitoring",
+  "frontend_build": "passed",
+  "ruff": "passed",
+  "narrated_demo_video": "not_recorded",
+  "tested_profile": "extractive response; lexical hash embeddings; Qdrant local; SQLite"
+}

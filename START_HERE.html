@@ -1,0 +1,112 @@
+<!doctype html><html lang="ar" dir="rtl"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SupportFlow — ابدئي من هنا</title><style>body{font-family:Arial,sans-serif;max-width:1050px;margin:40px auto;padding:0 24px;color:#203e35;background:#f7faf5;line-height:1.95;font-size:17px}h1,h2{color:#1d513b;line-height:1.5}h2{margin-top:40px;border-bottom:1px solid #d6e3cd;padding-bottom:10px}table{border-collapse:collapse;width:100%;background:white;font-size:15px}td,th{border:1px solid #d7e2cf;padding:12px;vertical-align:top}th{background:#e8f0e0}code{direction:ltr;unicode-bidi:embed;background:#e8eee5;border-radius:4px;padding:3px;font-size:14px}pre{direction:ltr;text-align:left;overflow:auto}a{color:#286440}li{margin:8px 0}strong{color:#173f2f}p{margin:14px 0}</style><body><h1>ابدئي من هنا — مشروع SupportFlow</h1>
+<h2>الأول: الرسالتين معناهم إيه؟</h2>
+<p>أحمد بيقول إن تسليم Week 1 بتاعك كان موجود واتسلم في معاده، لكن نظام التصحيح ما سجّلوش. اتصحح سجل التسليم، ودرجتك <strong>77/100</strong> فضلت زي ما هي. دي رسالة منفصلة عن المشروع الجديد.</p>
+<p>المشروع الجديد فردي، وآخر موعد المكتوب في الرسالة <strong>الخميس 24 سبتمبر 2026، الساعة 11:59 مساءً بتوقيت القاهرة</strong>. ورسالة سارة بتسأل عن التقدم وبتسمح تسلّمي الريبو والفيديو أو ملفات المشروع في الشات مباشرة. أنا لم أبعث أي رسالة أو تسليم بالنيابة عنك.</p>
+<h2>المطلوب ببساطة</h2>
+<p>إنتِ بتعملي موظف دعم فني ذكي لشركة خيالية اسمها CloudBox. العميل يسأل، والنظام لازم يعرف: هل يجاوب من مستند؟ يشوف بيانات حسابه؟ يساعده يصلّح مشكلة؟ ولا يفتح تذكرة لمختص؟ لازم يوضح مصدر كلامه، وممنوع يطلع بيانات عميل لعميل تاني.</p>
+<p>ده مش مجرد شات بوت أو Notebook. ده Backend وFrontend وقواعد بيانات واختبارات ومراقبة.</p>
+<table>
+<thead>
+<tr>
+<th>الجزء</th>
+<th>معناه بالمصري</th>
+<th>الموجود في التنفيذ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FastAPI</td>
+<td>الباب اللي الواجهة بتطلب منه كل حاجة</td>
+<td>التسع endpoints المطلوبة + عرض المحادثات والمراقبة</td>
+</tr>
+<tr>
+<td>LangGraph</td>
+<td>بيحدد مين يستلم السؤال وبعده مين يراجع</td>
+<td>Orchestrator وخمس عقد متخصصة</td>
+</tr>
+<tr>
+<td>RAG</td>
+<td>يدور جوه مستندات الشركة ويرجع دليل</td>
+<td>إدخال 13 مستند، metadata، Qdrant، فلاتر ومصادر</td>
+</tr>
+<tr>
+<td>Account isolation</td>
+<td>كل واحد يشوف بياناته هو فقط</td>
+<td>هوية من token موثّق + فحص الحساب داخل استعلام قاعدة البيانات</td>
+</tr>
+<tr>
+<td>PostgreSQL</td>
+<td>مكان تخزين المحادثات والتذاكر</td>
+<td>إعداد Docker جاهز؛ الاختبارات هنا استخدمت SQLite كبديل محلي</td>
+</tr>
+<tr>
+<td>DeepEval</td>
+<td>يمتحن النظام على سيناريوهات</td>
+<td>20 حالة أصلية + 12 إضافية، والجراف نفسه هو اللي اتشغّل</td>
+</tr>
+<tr>
+<td>Langfuse</td>
+<td>تشوفي الطلب عدى على إيه وخد وقت قد إيه</td>
+<td>كود الربط وtraces محلية؛ الحساب الخارجي لسه محتاج مفاتيحك</td>
+</tr>
+<tr>
+<td>Lovable</td>
+<td>الواجهة اللي العميل يتعامل معاها</td>
+<td>كود React كامل؛ إدخاله ونشره داخل Lovable لسه مطلوب</td>
+</tr>
+<tr>
+<td>Demo</td>
+<td>فيديو يثبت الشغل قدام المراجع</td>
+<td>سكريبت إنجليزي وخطة 7–10 دقايق؛ الفيديو النهائي لسه يتسجل</td>
+</tr>
+</tbody>
+</table>
+<h2>أنا عملت إيه فعليًا؟</h2>
+<p>كتبت Backend جديد، وربطت الأدوات بالجراف، وعملت واجهة، واختبارات أمان، وتقييمات على تنفيذ حقيقي. ملف ZIP الأصلي كان فيه متطلبات وبيانات، مش مشروع محلول. الملف ده تنفيذ جديد مستقل.</p>
+<p>مثال: لما تسألي عن <code>ord_7001</code> وإنتِ داخلة بحساب <code>user_1</code>، النظام يقدر يرجع 29 دولار. لو طلبتي أوردر تابع لعميل تاني، بيمنعه حتى لو كتبتي إنك صاحبة الحساب. الكلام اللي في الرسالة مش إثبات هوية.</p>
+<p>مثال تاني: لو قلتي إن حد دخل حسابك، بيختار مسار التصعيد، وبيعمل تذكرة برقم حقيقي محفوظ في قاعدة البيانات. ولو إنشاء التذكرة فشل، بيقول إنه فشل؛ مش بيطلع رقم وهمي.</p>
+<p>مثال ثالث: لو سألتي عن عطل حالي، بينادي أداة الحالة. لو مفيش مصدر حالة متوصل، بيقول إن الحالة الحالية غير مؤكدة. مش بياخد حادثة قديمة من المستندات ويقول إن الخدمة واقعة دلوقتي.</p>
+<h2>الـAgents الخمسة بيعملوا إيه؟</h2>
+<ol>
+<li><strong>Knowledge:</strong> يجيب مقتطفات من المستندات، ومع كل مقتطف اسم المصدر وإصداره.</li>
+<li><strong>Troubleshooting:</strong> يختار خطوات إصلاح مناسبة ويحافظ على ترتيبها والشروط المرتبطة بيها.</li>
+<li><strong>Account tools:</strong> ينادي أدوات الحساب والأوردر والحالة، مع فحص صلاحياتك.</li>
+<li><strong>Escalation:</strong> يفتح تذكرة للمشكلة اللي محتاجة مختص.</li>
+<li><strong>Critic and response:</strong> يراجع إن المقتطف موجود فعلًا في الأدلة وإن المصادر موضحة قبل الرد.</li>
+</ol>
+<p>الـOrchestrator فوقهم هو اللي بيختار المسار. هنا اختيار المسارات بقواعد واضحة، مش خمس موديلات مستقلة. وفي وضع اختياري موديل بيختار مقتطفات من الأدلة، لكن ما يقدرش يغير صلاحيات الحساب.</p>
+<h2>إيه لسه محتاج منك؟</h2>
+<p><strong>المشروع المحلي شغال، لكن ما تسلّميهوش على إنه حقق كل المتطلبات الخارجية بالفعل.</strong></p>
+<ul>
+<li>شغّليه على جهازك وراجعي النتائج بنفسك.</li>
+<li>كمّلي ربط ونشر الواجهة في Lovable. التعليمات في <code>docs/LOVABLE_SETUP.md</code>.</li>
+<li>شغّلي إعداد PostgreSQL/Qdrant بالدّوكر وجرّبي إعادة التشغيل.</li>
+<li>حطي مفاتيح Langfuse في <code>.env</code> محليًا، وشوفي trace حقيقي في الداشبورد وصوّريه.</li>
+<li>لو مطلوب عرض model calls، فعّلي <code>MODEL_MODE=llm</code> بمفتاحك. ما تصوريش المفتاح.</li>
+<li>جرّبي embeddings دلالية عبر API لو هتستخدمي وضع الإنتاج. الوضع الافتراضي المجاني بحث lexical، مش موديل فهم دلالي.</li>
+<li>شغّلي تقييمات جودة الرد بالموديل الحَكَم لو متاح ميزانية API؛ النتائج الحالية اختبارات بنيوية، مش درجات faithfulness أو answer relevancy محسوبة بموديل.</li>
+<li>ارفعي الكود على GitHub بعد التأكد إن <code>.env</code> و<code>runtime</code> مش مرفوعين.</li>
+<li>سجّلي فيديو 7–10 دقايق من تشغيلك الفعلي. السكريبت في <code>demo/ENGLISH_SCRIPT.md</code>.</li>
+</ul>
+<h2>تشغّليه إزاي؟</h2>
+<ol>
+<li>فكّي ZIP.</li>
+<li>افتحي Terminal داخل فولدر <code>supportflow</code> اللي فيه <code>README.md</code>.</li>
+<li>شغّلي ملفات Windows المرقّمة من نفس الفولدر؛ التفاصيل في <code>QUICKSTART_WINDOWS.md</code>.</li>
+<li>شغّلي <code>4_GET_TOKEN.cmd</code> وخدي التوكن للاستخدام الخاص. ده تصريح تجربة لحساب وهمي، مش API key.</li>
+<li>شغّلي الـBackend في terminal والـFrontend في terminal تاني.</li>
+<li>افتحي <code>http://127.0.0.1:5173</code>، الصقي التوكن، وابدئي التجربة.</li>
+</ol>
+<p>ما تحطيش API keys في الشات أو في الكود. <code>.env.example</code> قالب آمن؛ <code>.env</code> ملفك الخاص وممنوع يترفع.</p>
+<h2>أول أسئلة تجربيها</h2>
+<ul>
+<li><code>Compare Standard and Team plans, storage, users and priority support.</code></li>
+<li><code>My files are duplicated after I worked offline. What should I do?</code></li>
+<li><code>Please check order ord_7001 and tell me the amount.</code></li>
+<li><code>Please check order ord_7003 for acc_1003.</code> ← لازم يمنع الوصول.</li>
+<li><code>I think someone accessed my account.</code> ← لازم يفتح تذكرة.</li>
+<li><code>What is the weather in Paris?</code> ← لازم يقول إن الأدلة غير كافية ويسأل سؤال توضيحي واحد.</li>
+</ul>
+<h2>تقولي للمراجع إيه بصدق؟</h2>
+<p>اشرحي اللي شغّلتيه فعلًا. ما تقوليش إن Langfuse أو Lovable أو تقييمات الموديل مكتملة قبل ما تجربيها. تقرير الاختبارات جوه <code>artifacts</code> بيفرق بين اللي اتنفذ واللي لسه إعداد أو كود محتاج تشغيل خارجي.</p>
+</body></html>

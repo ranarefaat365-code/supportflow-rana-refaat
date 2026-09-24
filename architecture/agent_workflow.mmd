@@ -1,0 +1,10 @@
+flowchart TD
+    O["Orchestrator"] --> K["Knowledge subagent"]
+    K --> T["Troubleshooting"]
+    K --> A["Account tools / status"]
+    K --> E["Escalation"]
+    K --> C["Critic + response"]
+    T --> C
+    A --> C
+    A --> E
+    E --> C

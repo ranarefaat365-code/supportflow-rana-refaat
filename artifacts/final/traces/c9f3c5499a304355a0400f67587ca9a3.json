@@ -1,0 +1,85 @@
+{
+  "trace_id": "c9f3c5499a304355a0400f67587ca9a3",
+  "request_id": "5b8d31e0-d943-491e-ad1b-52d8c190469d",
+  "user_id": "user_1",
+  "session_id": "c8cc60cf-aa99-4a0d-80e5-cc63e6796430",
+  "spans": [
+    {
+      "id": "42c417eedf544969",
+      "parent_id": "9c5e279613104617",
+      "name": "tool.get_thread_summary",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 1.201
+    },
+    {
+      "id": "9c5e279613104617",
+      "parent_id": null,
+      "name": "agent.orchestrator",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 1.307
+    },
+    {
+      "id": "a7cdc0e238fd434d",
+      "parent_id": "f06002649fdc4f9c",
+      "name": "embedding.local_hash",
+      "kind": "span",
+      "metadata": {
+        "embedding_model": "hash-word-bigram-4096",
+        "tokens": 0,
+        "cost_usd": 0
+      },
+      "error": false,
+      "latency_ms": 0.807
+    },
+    {
+      "id": "f06002649fdc4f9c",
+      "parent_id": "79763fee472a4505",
+      "name": "retrieval.qdrant",
+      "kind": "span",
+      "metadata": {
+        "result_limit": 4
+      },
+      "error": false,
+      "latency_ms": 8.028
+    },
+    {
+      "id": "79763fee472a4505",
+      "parent_id": "0b05a132d85f4eda",
+      "name": "tool.search_knowledge_base",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 8.074
+    },
+    {
+      "id": "0b05a132d85f4eda",
+      "parent_id": null,
+      "name": "agent.knowledge",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 8.179
+    },
+    {
+      "id": "bc53772ca91e4296",
+      "parent_id": null,
+      "name": "agent.critic_response",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 0.963
+    }
+  ],
+  "exported_to_langfuse": false,
+  "summary": {
+    "route": "knowledge",
+    "model_calls": 0,
+    "tool_calls": 2,
+    "search_calls": 1,
+    "latency_ms": 13.7
+  }
+}

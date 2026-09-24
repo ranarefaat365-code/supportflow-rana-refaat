@@ -1,0 +1,9 @@
+flowchart TD
+    UI["React / Lovable frontend"] --> API["FastAPI + JWT session"]
+    API --> GRAPH["Compiled LangGraph"]
+    GRAPH --> RAG["Metadata-filtered retrieval"]
+    GRAPH --> TOOLS["Scoped tools"]
+    RAG --> Q["Qdrant vectors"]
+    TOOLS --> DB["PostgreSQL / local SQLite"]
+    GRAPH --> OBS["Local spans + Langfuse exporter"]
+    EVAL["DeepEval runner"] --> GRAPH

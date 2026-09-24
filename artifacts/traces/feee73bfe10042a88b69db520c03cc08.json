@@ -1,0 +1,85 @@
+{
+  "trace_id": "feee73bfe10042a88b69db520c03cc08",
+  "request_id": "0dc675a4-5e12-473d-9ab3-f727ddb9e432",
+  "user_id": "user_1",
+  "session_id": "05f3cb49-04cd-4461-a137-840f9be3be83",
+  "spans": [
+    {
+      "id": "f7a2d6f571ca42e4",
+      "parent_id": "e594c2f997e2438c",
+      "name": "tool.get_thread_summary",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 0.96
+    },
+    {
+      "id": "e594c2f997e2438c",
+      "parent_id": null,
+      "name": "agent.orchestrator",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 1.057
+    },
+    {
+      "id": "fe44d4ff51e44682",
+      "parent_id": "b18882ac0a52421d",
+      "name": "embedding.local_hash",
+      "kind": "span",
+      "metadata": {
+        "embedding_model": "hash-word-bigram-4096",
+        "tokens": 0,
+        "cost_usd": 0
+      },
+      "error": false,
+      "latency_ms": 0.891
+    },
+    {
+      "id": "b18882ac0a52421d",
+      "parent_id": "6f95aa46a60c444c",
+      "name": "retrieval.qdrant",
+      "kind": "span",
+      "metadata": {
+        "result_limit": 4
+      },
+      "error": false,
+      "latency_ms": 9.358
+    },
+    {
+      "id": "6f95aa46a60c444c",
+      "parent_id": "2772aba63efe4c42",
+      "name": "tool.search_knowledge_base",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 9.417
+    },
+    {
+      "id": "2772aba63efe4c42",
+      "parent_id": null,
+      "name": "agent.knowledge",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 9.514
+    },
+    {
+      "id": "208c5019a85a4279",
+      "parent_id": null,
+      "name": "agent.critic_response",
+      "kind": "span",
+      "metadata": {},
+      "error": false,
+      "latency_ms": 0.391
+    }
+  ],
+  "exported_to_langfuse": false,
+  "summary": {
+    "route": "knowledge",
+    "model_calls": 0,
+    "tool_calls": 2,
+    "search_calls": 1,
+    "latency_ms": 13.9
+  }
+}
